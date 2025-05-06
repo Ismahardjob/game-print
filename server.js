@@ -15,6 +15,9 @@ const app = express();
 app.use(cors());
 app.use(bodyParser.json());
 
+app.get("/", (req, res) => {
+  res.send("Bienvenue sur l'API Game Print. Utilisez POST /generate pour créer un jeu.");
+});
 
 app.post("/generate", async (req, res) => {
   const { description } = req.body;
